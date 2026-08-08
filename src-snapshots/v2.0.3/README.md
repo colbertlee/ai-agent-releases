@@ -1,5 +1,4 @@
-# Source snapshot v2.0.3
+Full source code at v2.0.3 tag (2.2 MB compressed).
 
-See Gitee for actual file: https://gitee.com/colbertlee/ai-agent-releases/raw/master/src-snapshots/v2.0.3/ai-agent-source-v2.0.3.tar.gz (2214 KB)
-
-Contains the full source code at the v2.0.3 tag.
+See GitHub Releases page for the actual file:
+https://github.com/colbertlee/ai-agent-releases/releases/tag/v2.0.3
