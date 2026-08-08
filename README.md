@@ -1,20 +1,7 @@
-# ai-agent-releases (GitHub mirror)
+# ai-agent-releases
 
-> **GitHub mirror of the official Gitee repository.**
-> This repository contains metadata, SHA256 checksums, and download pointers.
-> **All actual artifacts (wheel/sdist/zip/PDF) live on Gitee.**
-
----
-
-## Why Gitee is primary, GitHub is mirror
-
-| Platform | Purpose | Note |
-|---|---|---|
-| **Gitee** | Primary download (China) | Fast for Chinese users, all binaries hosted |
-| **GitHub** | International visibility + open-source presence | Metadata only (binaries too large for MCP upload) |
-
-Source: https://gitee.com/colbertlee/langChain_langGraph
-Releases: https://gitee.com/colbertlee/ai-agent-releases/releases
+> **Official release artifacts for ai-agent.**
+> Source code: https://github.com/colbertlee/langChain_langGraph
 
 ---
 
@@ -29,87 +16,84 @@ ai-agent is a **production-ready Multi-Agent framework** with 10 built-in Worker
 
 ---
 
-## Download v2.0.3 (from Gitee)
+## Download v2.0.3
 
-### Direct download links (Gitee)
+Each release below has all the artifacts attached:
 
-| Artifact | Size | Download |
-|---|---|---|
-| **`ai-agent-python-v2.0.3.zip`** ⭐ (recommended for new users) | 676 KB | [Download](https://gitee.com/colbertlee/ai-agent-releases/raw/master/products/v2.0.3/ai-agent-python-v2.0.3.zip) |
-| `ai_agent-2.0.3-py3-none-any.whl` | 391 KB | [Download](https://gitee.com/colbertlee/ai-agent-releases/raw/master/products/v2.0.3/ai_agent-2.0.3-py3-none-any.whl) |
-| `ai_agent-2.0.3.tar.gz` | 532 KB | [Download](https://gitee.com/colbertlee/ai-agent-releases/raw/master/products/v2.0.3/ai_agent-2.0.3.tar.gz) |
-| `AgentCore_架构与测试报告.pdf` | 266 KB | [Download](https://gitee.com/colbertlee/ai-agent-releases/raw/master/products/v2.0.3/AgentCore_架构与测试报告.pdf) |
-| `ai-agent-source-v2.0.3.tar.gz` (full source code) | 2214 KB | [Download](https://gitee.com/colbertlee/ai-agent-releases/raw/master/src-snapshots/v2.0.3/ai-agent-source-v2.0.3.tar.gz) |
+### `ai-agent-python-v2.0.3.zip` (recommended for new users)
 
-### SHA256 checksums (available on GitHub)
+676 KB — the complete package containing:
 
-Each `.sha256` file in `products/v2.0.3/` is mirrored from Gitee and contains the authoritative checksum. Use these to verify downloaded files:
+- `ai_agent-2.0.3-py3-none-any.whl` (391 KB) — pip install wheel
+- `AgentCore_*.pdf` (266 KB) — architecture + test report
+- 6 markdown docs (ONBOARDING, ARCHITECTURE, USER_GUIDE, CHANGELOG, RELEASE_GUIDE, VERSION_MANAGEMENT)
+- `examples/example.py` — 5-minute quickstart script
+- `verify_release.bat` — SHA256 verification script
+- `.env.example` — API key configuration template
+- `README.md` — quickstart guide
+- `RELEASE_NOTES.md` — version notes
 
-- [`ai_agent-2.0.3-py3-none-any.whl.sha256`](products/v2.0.3/ai_agent-2.0.3-py3-none-any.whl.sha256)
-- [`ai_agent-2.0.3.tar.gz.sha256`](products/v2.0.3/ai_agent-2.0.3.tar.gz.sha256)
-- [`AgentCore_架构与测试报告.pdf.sha256`](products/v2.0.3/AgentCore_架构与测试报告.pdf.sha256)
+### Other artifacts
 
-### Why are binaries NOT hosted here?
-
-GitHub MCP upload tools only support text content (no binary upload). Until a proper binary upload channel is set up (via GitHub Actions with a real token), the binaries remain on Gitee only. SHA256 files are mirrored as text.
-
-If you want to host binaries on GitHub too, see [GITHUB_PUSH.md](GITHUB_PUSH.md) for the recommended approach using `gh release upload` with a personal access token.
+- `ai_agent-2.0.3-py3-none-any.whl` (391 KB) — pip install
+- `ai_agent-2.0.3.tar.gz` (532 KB) — source distribution
+- `AgentCore_*.pdf` (266 KB) — architecture report
 
 ---
 
 ## 5-minute Quickstart
 
-After downloading `ai-agent-python-v2.0.3.zip` from Gitee:
-
 ```bash
-# 1. Unzip
+# 1. Download ai-agent-python-v2.0.3.zip from this release page
+# 2. Unzip
 unzip ai-agent-python-v2.0.3.zip
 cd ai-agent-python-v2.0.3
 
-# 2. Verify integrity (Windows)
+# 3. Verify integrity
+# Windows:
 verify_release.bat
-# Or on Linux/macOS:
+# Linux/macOS:
 sha256sum -c *.sha256
 
-# 3. Install
+# 4. Install
 pip install ai_agent-2.0.3-py3-none-any.whl
 
-# 4. Configure (set your LLM API key)
+# 5. Configure (set your LLM API key)
 cp .env.example .env
 # Edit .env and set OPENAI_API_KEY=sk-...
 
-# 5. Run the example
+# 6. Run the example
 python examples/example.py
 ```
 
 ---
 
-## Repository Layout
+## System Requirements
 
-This GitHub repository contains:
+- Python 3.11+
+- At least one LLM API key (OpenAI, DeepSeek, Anthropic, or other compatible)
+- Windows / macOS / Linux
 
-- `products/v2.0.3/` — SHA256 checksums + download instructions (binaries on Gitee)
-- `products/v2.0.2/` — Previous version (similar layout)
-- `src-snapshots/v2.0.3/README.md` — Pointer to source code snapshot
-- `src-snapshots/v2.0.2/README.md` — Pointer to source code snapshot
-- `RELEASE_NOTES.md` — Release notes for all versions
-- `VERSION_MANAGEMENT.md` — Version management SOP
-- `VERSION_AUTOMATION.md` — Automation overview
-- `GITHUB_PUSH.md` — How to properly push binaries to GitHub
+---
 
 ## Source Code
 
-The full source code lives in a separate repository:
+- **Repository**: https://github.com/colbertlee/langChain_langGraph
+- **Source code at this version**: `src-snapshots/v2.0.3/ai-agent-source-v2.0.3.tar.gz` (2.2 MB)
 
-- **GitHub**: https://github.com/colbertlee/langChain_langGraph
-- **Gitee (primary)**: https://gitee.com/colbertlee/langChain_langGraph
+---
 
 ## Documentation
 
-- **ONBOARDING** (5-minute quickstart): see source repo
-- **USER_GUIDE** (detailed user manual): see source repo
-- **ARCHITECTURE** (deep architecture): see source repo
-- **CHANGELOG**: see source repo
+The release zip includes:
+
+- **ONBOARDING.md** — 5-minute quickstart
+- **USER_GUIDE.md** — detailed user manual
+- **ARCHITECTURE.md** — deep architecture
+- **CHANGELOG.md** — version history
+- **VERSION_MANAGEMENT.md** — version management SOP
+
+---
 
 ## Version History
 
